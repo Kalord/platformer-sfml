@@ -2,6 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "State.hpp"
+#include "pool/VisibleElementsPool.hpp"
+
 /**
  * Класс для работы с событиями
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
