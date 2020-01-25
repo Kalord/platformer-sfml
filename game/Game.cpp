@@ -5,6 +5,9 @@ Game::Game(Settings settings) : settings(settings)
     State::globalState()->setState(StateType::MAIN_MENU);
 }
 
+/**
+ * Запуск игры
+ **/
 void Game::run()
 {
     sf::RenderWindow window(
@@ -18,10 +21,7 @@ void Game::run()
     while(window.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed) window.close();
-        }
+        while (window.pollEvent(event)) Event::handle(window, event);
 
         window.clear();
         window.display();

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "../fileSystem/Settings.hpp"
 #include "State.hpp"
+#include "Event.hpp"
 
 /**
  * Сущность игры
