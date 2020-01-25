@@ -1,9 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
+
 #include "../fileSystem/Settings.hpp"
 #include "State.hpp"
 #include "Event.hpp"
+#include "../menu/MainMenu.hpp"
+#include "pool/VisibleElementsPool.hpp"
 
 /**
  * Сущность игры
@@ -13,6 +17,8 @@
 class Game
 {
 private:
+    const std::string TITLE = "Game";
+
     /**
      * Настройки игры
      **/
@@ -22,5 +28,5 @@ public:
     /**
      * Запуск игры
      **/
-    void run();
+    void run(MainMenu& mainMenu);
 };
