@@ -50,4 +50,16 @@ public:
      * Высота окна
      **/
     u_int32_t getHeightWindow();
+    /**
+     * Получение языка
+     **/
+    std::string getLanguage();
+    /**
+     * Определяет, нужно ли включать музыку в игре
+     **/
+    bool powerMusic();
+    /**
+     * Определяет, нужно ли включать звуковые эффекты в игре
+     **/
+    bool powerSoundEffects();
 };
