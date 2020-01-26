@@ -6,6 +6,7 @@
 #include <memory>
 #include <string>
 #include <sys/types.h>
+#include <iostream>
 
 #include "Button.hpp"
 #include "../fileSystem/Settings.hpp"

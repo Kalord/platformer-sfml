@@ -32,7 +32,9 @@ u_int32_t Nav::getActive()
 
 void Nav::setActive(u_int32_t index)
 {
-    if(index < 0 || this->buttons.size() >= index) return;
+    if(index < 0 || index >= this->buttons.size()) return;
+
+    std::cout << index << std::endl;
 
     this->buttons[this->indexOfActiveButton]->toggleActive();
     this->indexOfActiveButton = index;
