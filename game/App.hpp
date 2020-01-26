@@ -15,7 +15,7 @@
  * 
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
-class Game
+class App
 {
 private:
     const std::string TITLE = "Game";
@@ -28,7 +28,7 @@ private:
      */
     Event event;
 public:
-    Game(Settings settings);
+    App(Settings settings);
     /**
      * Запуск игры
      **/

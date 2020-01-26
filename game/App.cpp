@@ -1,6 +1,6 @@
-#include "Game.hpp"
+#include "App.hpp"
 
-Game::Game(Settings settings) : settings(settings), event(Event{})
+App::App(Settings settings) : settings(settings), event(Event{})
 {
     State::globalState()->setState(StateType::MAIN_MENU);
 }
@@ -8,7 +8,7 @@ Game::Game(Settings settings) : settings(settings), event(Event{})
 /**
  * Запуск игры
  **/
-void Game::run(MainMenu& mainMenu)
+void App::run(MainMenu& mainMenu)
 {
     sf::RenderWindow window(
         sf::VideoMode(
