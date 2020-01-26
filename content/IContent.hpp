@@ -13,5 +13,5 @@
 class IContent
 {
 public:
-    virtual std::vector<std::string> get() = 0;
+    virtual std::vector<std::string> get(std::string lang) = 0;
 };
