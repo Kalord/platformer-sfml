@@ -1,9 +1,24 @@
 #include "Event.hpp"
 
-/**
- * Обработка событий
- **/
-void Event::handle(sf::RenderWindow& window, sf::Event& event)
+Event::Event()
 {
-    if(event.type == sf::Event::Closed) window.close();
+    this->commonEvent = new Common();
+    this->menuEvent = new Menu();
+}
+
+/**
+ * Получение общих событий
+ **/
+Common* Event::common()
+{
+    return this->commonEvent;
+}
+
+
+/**
+ * Получение событий игрового меню
+ **/
+Menu* Event::menu()
+{
+    return this->menuEvent;
 }

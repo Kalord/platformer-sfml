@@ -1,19 +1,33 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
-#include "../state/State.hpp"
-#include "../pool/VisibleElementsPool.hpp"
+#include "Common.hpp"
+#include "Menu.hpp"
 
 /**
- * Класс для работы с событиями
+ * Фасад для событий игры
+ * 
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
 class Event
 {
-public:
+private:
     /**
-     * Обработка событий
+     * События, общие для игры
      **/
-    static void handle(sf::RenderWindow& window, sf::Event& event);
+    Common* commonEvent;
+    /**
+     * События, для игрового меню
+     **/
+    Menu* menuEvent;
+public:
+    Event();
+    /**
+     * Получение общих событий
+     **/
+    Common* common();
+
+    /**
+     * Получение событий игрового меню
+     **/
+    Menu* menu();
 };
