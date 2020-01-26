@@ -5,13 +5,14 @@
 #include "../game/IShow.hpp"
 #include "../fileSystem/Settings.hpp"
 #include "Nav.hpp"
+#include "interfaces/INavContainer.hpp"
 
 /**
  * Главное меню
  * 
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
-class MainMenu : public IShow
+class MainMenu : public IShow, public INavContainer
 {
 private:
     /**
@@ -29,7 +30,7 @@ private:
 public:
     MainMenu(std::string pathToBackground, Nav* nav);
 
-    Nav* getNav();
+    Nav* getNav() override;
 
     sf::Drawable& show() override;
 };
