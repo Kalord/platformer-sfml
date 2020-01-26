@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <utility>
 #include <sys/types.h>
 
 #include "Button.hpp"
@@ -27,7 +28,7 @@ private:
      **/
     u_int32_t indexOfActiveButton;
 public:
-    Nav(std::vector<std::string> titles, std::string pathToFont);
+    Nav(std::vector<std::pair<std::string, StateInt>> content, std::string pathToFont);
 
     u_int32_t getActive();
     void setActive(u_int32_t index);

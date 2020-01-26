@@ -1,17 +1,18 @@
 #include "Nav.hpp"
 
-Nav::Nav(std::vector<std::string> titles, std::string pathToFont)
+Nav::Nav(std::vector<std::pair<std::string, StateInt>> content, std::string pathToFont)
 {
     float offsetWidth = (Settings()).getWidthWindow() / 2.5;
     float offsetHeight = (Settings()).getHeightWindow() / 3;
     const float stepHeight = (Settings()).getHeightWindow() / 10;
 
-    for(const auto& title : titles)
+    for(auto const& [title, link] : content)
     {
         this->buttons.push_back(
             std::shared_ptr<Button>(
                 new Button(
                     title,
+                    link,
                     pathToFont,
                     30,
                     sf::Vector2f(offsetWidth, offsetHeight
