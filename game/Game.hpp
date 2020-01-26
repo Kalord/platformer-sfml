@@ -1,13 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include <string>
+#include <memory>
 
 #include "../fileSystem/Settings.hpp"
 #include "state/State.hpp"
-#include "event/Event.hpp"
 #include "../menu/MainMenu.hpp"
-#include "pool/VisibleElementsPool.hpp"
+#include "event/Event.hpp"
 
 /**
  * Сущность игры
@@ -18,11 +19,14 @@ class Game
 {
 private:
     const std::string TITLE = "Game";
-
     /**
      * Настройки игры
      **/
     Settings settings;
+    /**
+     * Система событий
+     */
+    Event event;
 public:
     Game(Settings settings);
     /**
