@@ -30,6 +30,8 @@ private:
 public:
     Nav(std::vector<std::pair<std::string, StateInt>> content, std::string pathToFont);
 
+    std::shared_ptr<Button> getButton(u_int32_t index);
+
     u_int32_t getActive();
     void setActive(u_int32_t index);
 

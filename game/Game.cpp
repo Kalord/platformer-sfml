@@ -43,6 +43,10 @@ void Game::run(MainMenu& mainMenu)
                     {
                         this->event.menu()->moveActiveToBotton(&mainMenu);
                     }
+                    if(event.key.code == sf::Keyboard::Enter)
+                    {
+                        this->event.menu()->updateState(&mainMenu);
+                    }
                 }
             }
         }

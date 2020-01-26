@@ -26,6 +26,11 @@ Nav::Nav(std::vector<std::pair<std::string, StateInt>> content, std::string path
     this->buttons[this->indexOfActiveButton]->toggleActive();
 }
 
+std::shared_ptr<Button> Nav::getButton(u_int32_t index)
+{
+    return this->buttons[index];
+}
+
 u_int32_t Nav::getActive()
 {
     return this->indexOfActiveButton;

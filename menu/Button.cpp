@@ -14,6 +14,11 @@ Button::Button(std::string title, StateInt link, std::string pathToFont, u_int32
     this->active = false;
 }
 
+StateInt Button::getLink()
+{
+    return this->link;
+}
+
 void Button::toggleActive()
 {
     if(this->active)

@@ -41,6 +41,7 @@ private:
     bool active;
 public:
     Button(std::string title, StateInt link, std::string pathToFont, u_int32_t sizeOfTitle, sf::Vector2f position);
+    StateInt getLink();
     void toggleActive();
     sf::Drawable& show() override;
 };
