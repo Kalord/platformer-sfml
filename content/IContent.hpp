@@ -1,7 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <utility>
 #include <string>
+#include "../game/state/StateType.hpp"
 
 /**
  * Интерфейс для контент провайдеров
@@ -13,5 +15,5 @@
 class IContent
 {
 public:
-    virtual std::vector<std::string> get(std::string lang) = 0;
+    virtual std::vector<std::pair<std::string, StateInt>> get(std::string lang) = 0;
 };

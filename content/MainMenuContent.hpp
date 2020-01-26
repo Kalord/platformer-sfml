@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IContent.hpp"
+#include "../game/state/StateType.hpp"
 
 /**
  * Контент для главного меню
@@ -10,5 +11,5 @@
 class MainMenuContent : public IContent
 {
 public:
-    std::vector<std::string> get(std::string lang) override;
+    std::vector<std::pair<std::string, StateInt>> get(std::string lang) override;
 };
