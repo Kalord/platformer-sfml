@@ -1,8 +1,9 @@
 #include "Button.hpp"
 
-Button::Button(std::string title, std::string pathToFont, u_int32_t sizeOfTitle, sf::Vector2f position)
+Button::Button(std::string title, StateInt link, std::string pathToFont, u_int32_t sizeOfTitle, sf::Vector2f position)
 {
     this->title = title;
+    this->link = link;
     this->position = position;
     this->fontOfTitle.loadFromFile(pathToFont);
     this->button.setPosition(this->position);
