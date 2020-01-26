@@ -20,7 +20,10 @@ void Game::run(MainMenu& mainMenu)
 
     while(window.isOpen())
     {
+        StateInt currentState = State::globalState()->getState();
+        
         sf::Event event;
+
         while (window.pollEvent(event))
         {
             if(event.type == sf::Event::Closed)
@@ -30,7 +33,7 @@ void Game::run(MainMenu& mainMenu)
 
             if(event.type == sf::Event::KeyPressed)
             {
-                if(State::globalState()->getState() == StateType::MAIN_MENU)
+                if(currentState == StateType::MAIN_MENU)
                 {
                     if(event.key.code == sf::Keyboard::Up)
                     {
@@ -39,14 +42,14 @@ void Game::run(MainMenu& mainMenu)
                     if(event.key.code == sf::Keyboard::Down)
                     {
                         this->event.menu()->moveActiveToBotton(&mainMenu);
-                    }                    
+                    }
                 }
             }
         }
 
         window.clear();
 
-        if(State::globalState()->getState() == StateType::MAIN_MENU)
+        if(currentState == StateType::MAIN_MENU)
         {
             window.draw(mainMenu.show());
             std::vector<std::shared_ptr<Button>> buttons = mainMenu.getNav()->getButtons();
