@@ -4,6 +4,7 @@
 #include <string>
 #include "../game/IShow.hpp"
 #include "../fileSystem/Settings.hpp"
+#include "Nav.hpp"
 
 /**
  * Главное меню
@@ -21,8 +22,14 @@ private:
      * Фон меню
      **/
     sf::Sprite background;
+    /**
+     * Навигация
+     **/
+    Nav* nav;
 public:
-    MainMenu(std::string pathToBackground, Settings settings);
+    MainMenu(std::string pathToBackground, Nav* nav);
+
+    Nav* getNav();
 
     sf::Drawable& show() override;
 };
