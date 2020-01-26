@@ -4,8 +4,8 @@
 #include <string>
 
 #include "../fileSystem/Settings.hpp"
-#include "State.hpp"
-#include "Event.hpp"
+#include "state/State.hpp"
+#include "event/Event.hpp"
 #include "../menu/MainMenu.hpp"
 #include "pool/VisibleElementsPool.hpp"
 
