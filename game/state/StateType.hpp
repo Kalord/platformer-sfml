@@ -23,7 +23,11 @@ public:
      **/
     static const StateInt SETTINGS_MENU = 2;
     /**
-     * Игрок находится в игре
+     * Игрок находится в новой игре
      **/
-    static const StateInt GAME = 3;
+    static const StateInt NEW_GAME = 3;
+    /**
+     * Продолжение начатой игры
+     **/
+    static const StateInt CONTINUE = 4;
 };
