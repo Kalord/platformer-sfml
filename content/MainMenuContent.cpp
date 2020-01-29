@@ -5,7 +5,7 @@ std::vector<std::pair<std::string, StateInt>> MainMenuContent::get(std::string l
     if(lang == "ru")
     {
         return std::vector<std::pair<std::string, StateInt>>{
-            {"Продолжить", 3},
+            {"Продолжить", 4},
             {"Новая игра", 3},
             {"Настройки", 2},
             {"Выход", -1}
@@ -13,7 +13,7 @@ std::vector<std::pair<std::string, StateInt>> MainMenuContent::get(std::string l
     }
 
     return std::vector<std::pair<std::string, StateInt>>{
-        {"Continue", 3},
+        {"Continue", 4},
         {"New game", 3},
         {"Settings", 2},
         {"Exit", -1}
