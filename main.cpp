@@ -1,6 +1,6 @@
 #include <string>
 
-#include "game/Game.hpp"
+#include "game/App.hpp"
 #include "fileSystem/Settings.hpp"
 
 #include "menu/MainMenu.hpp"
@@ -19,7 +19,7 @@ int main()
 
     MainMenu mainMenu("assets/img/menu/main-background.png", &nav);
 
-    (Game(settings)).run(mainMenu);
+    (App(settings)).run(mainMenu);
 
     return 0;
 }
