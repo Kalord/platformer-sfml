@@ -21,7 +21,6 @@ void App::run(MainMenu& mainMenu)
     while(window.isOpen())
     {
         StateInt currentState = State::globalState()->getState();
-        
         sf::Event event;
 
         while (window.pollEvent(event))
@@ -61,6 +60,16 @@ void App::run(MainMenu& mainMenu)
             {
                 window.draw(button->show());
             }
+        }
+
+        if(currentState == StateType::NEW_GAME)
+        {
+            
+        }
+
+        if(currentState == StateType::NONE)
+        {
+            this->event.common()->close(window);
         }
 
         window.display();
