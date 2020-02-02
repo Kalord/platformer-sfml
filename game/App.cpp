@@ -1,6 +1,6 @@
 #include "App.hpp"
 
-App::App(Settings settings) : settings(settings), event(Event{})
+App::App(Settings settings) : settings(settings), event(Event{}), game(Game{})
 {
     State::globalState()->setState(StateType::MAIN_MENU);
 }
@@ -20,9 +20,15 @@ void App::run(MainMenu& mainMenu)
 
     while(window.isOpen())
     {
+        /**
+         * Получаем текущие состояние игры
+         **/
         StateInt currentState = State::globalState()->getState();
         sf::Event event;
 
+        /**
+         * Обработка событий
+         **/
         while (window.pollEvent(event))
         {
             if(event.type == sf::Event::Closed)
@@ -52,6 +58,9 @@ void App::run(MainMenu& mainMenu)
 
         window.clear();
 
+        /**
+         * Игрок находится в главном меню
+         **/
         if(currentState == StateType::MAIN_MENU)
         {
             window.draw(mainMenu.show());
@@ -62,11 +71,17 @@ void App::run(MainMenu& mainMenu)
             }
         }
 
+        /**
+         * Игрок начал новую игру
+         **/
         if(currentState == StateType::NEW_GAME)
         {
-            
+            this->game.newGame(window);
         }
 
+        /**
+         * Игрок находится на стадии выхода из игры
+         **/
         if(currentState == StateType::NONE)
         {
             this->event.common()->close(window);
