@@ -17,15 +17,15 @@ void Game::gameLoop(sf::RenderWindow& window)
         }
 
         window.clear();
-        //this->scene.draw(window);
+        this->scene->draw(window);
         window.display();
     }
 }
 
 void Game::newGame(sf::RenderWindow& window)
 {
-    //this->scene = new FirstLevel();
-    //gameLoop(window);
+    this->scene = std::make_shared<Scene>(new FirstLevel());
+    gameLoop(window);
 }
 
 void Game::continueGame(sf::RenderWindow& window)
