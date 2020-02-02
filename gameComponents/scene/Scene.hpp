@@ -8,7 +8,7 @@
 #include "../IComponent.hpp"
 #include "../tileMap/TileMap.hpp"
 #include "../camera/Camera.hpp"
-#include "../background/Background.hpp"
+#include "../TileContainer.hpp"
 
 /**
  * Базовый класс сцен
@@ -28,10 +28,10 @@ protected:
      **/
     std::shared_ptr<Camera> camera;
     /**
-     * Игровой фон
+     * Контейнер с тайлами
      **/
-    std::shared_ptr<Background> background;
+    std::shared_ptr<TileContainer> tileContainer;
 public:
     virtual ~Scene() {}
-    virtual void draw(sf::RenderWindow& window) = 0;
+    virtual void draw(sf::RenderWindow& window);
 };
