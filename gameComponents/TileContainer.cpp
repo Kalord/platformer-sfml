@@ -2,16 +2,21 @@
 
 TileContainer::TileContainer()
 {
+    const std::string pathToAsset = "assets/game/tile";
+
     std::map<char, std::string> tile = {
-        {'p', "assets/platform.png"}
+        {'p', pathToAsset + "/platform.png"},
+        {'m', pathToAsset + "/mushroom.png"}
+        //{'r', pathToAsset + "/rock.png"},
+        //{'l', pathToAsset + "/rock_2.png"}
     };
 
     for(auto const& [identityTile, path] : tile)
     {
         sf::Texture texture;
         texture.loadFromFile(path);
-        this->tileTexture.push_back(texture);
-        this->tileSprite[identityTile] = sf::Sprite(this->tileTexture[this->tileTexture.size() - 1]); 
+        this->tileTexture.push_back(sf::Texture(texture));
+        this->tileSprite[identityTile] = sf::Sprite(this->tileTexture[this->tileTexture.size() - 1]);
     }
 }
 
