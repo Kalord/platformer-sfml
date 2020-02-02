@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Scene.hpp"
-#include "../background/Default.hpp"
+#include "../tileMap/FirstLevelTile.hpp"
 
 /**
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
