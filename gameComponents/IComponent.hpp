@@ -10,5 +10,5 @@
 class IComponent
 {
 public:
-    virtual IComponent() {}
+    virtual ~IComponent() {}
 };
