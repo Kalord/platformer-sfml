@@ -17,10 +17,6 @@ class Game
 {
 private:
     /**
-     * Объект для работы с игровым прогрессом
-     **/
-    GameProgress gameProgress;
-    /**
      * Объект игровой сцены
      **/
     std::shared_ptr<Scene> scene;

@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() : gameProgress(GameProgress())
+Game::Game()
 {
 }
 
@@ -13,7 +13,12 @@ void Game::gameLoop(sf::RenderWindow& window)
 
         while (window.pollEvent(event))
         {
-            //...
+            if(event.type == sf::Event::Closed)
+            {
+                //@tmp
+                window.close();
+                //@tmp
+            }
         }
 
         window.clear();
@@ -24,7 +29,7 @@ void Game::gameLoop(sf::RenderWindow& window)
 
 void Game::newGame(sf::RenderWindow& window)
 {
-    this->scene = std::make_shared<Scene>(new FirstLevel());
+    this->scene = std::shared_ptr<Scene>(new FirstLevel());
     gameLoop(window);
 }
 
