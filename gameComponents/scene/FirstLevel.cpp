@@ -2,9 +2,9 @@
 
 FirstLevel::FirstLevel()
 {
-    this->camera = std::make_shared<Camera>(new Camera(5, 2));
-    this->tileMap = std::make_shared<TileMap>(new FirstLevelTile());
-    this->tileContainer = std::make_shared<TileContainer>(new TileContainer());
+    this->camera = std::shared_ptr<Camera>(new Camera(5, 2));
+    this->tileMap = std::shared_ptr<TileMap>(new FirstLevelTile());
+    this->tileContainer = std::shared_ptr<TileContainer>(new TileContainer());
 }
 
 void FirstLevel::draw(sf::RenderWindow& window)
