@@ -15,9 +15,9 @@ protected:
     /**
      * Тайловая карта
      **/
-    std::vector<char> tileMap;
+    std::vector<std::vector<char>> tileMap;
 public:
     virtual ~TileMap() {}
 
-    std::vector<char>& getTile();
+    char getTile(int x, int y);
 };

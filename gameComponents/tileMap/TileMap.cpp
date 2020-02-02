@@ -1,6 +1,6 @@
 #include "TileMap.hpp"
 
-std::vector<char>& TileMap::getTile()
+char TileMap::getTile(int x, int y)
 {
-    return this->tileMap;
+    return this->tileMap[x][y];
 }
