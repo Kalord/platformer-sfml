@@ -15,14 +15,14 @@ void Camera::update(
 {
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
-    const float tileOffset = 32.0f;
+    const float tileOffset = 64.0f;
 
     for(i; i < this->center.y + this->offset.y; i++)
     {
         int j = this->center.x - this->offset.x;
         for(j; j < this->center.x + this->offset.x; j++)
         {
-            char identityTile = tileMap->getTile(j, i);
+            char identityTile = tileMap->getTile(i, j);
 
             //@tmp
             if(identityTile == '0')
