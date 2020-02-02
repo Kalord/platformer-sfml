@@ -9,6 +9,7 @@
 #include "state/State.hpp"
 #include "../menu/MainMenu.hpp"
 #include "event/Event.hpp"
+#include "Game.hpp"
 
 /**
  * Сущность игры
@@ -27,6 +28,10 @@ private:
      * Система событий
      */
     Event event;
+    /**
+     * Объект игры
+     **/
+    Game game;
 public:
     App(Settings settings);
     /**
