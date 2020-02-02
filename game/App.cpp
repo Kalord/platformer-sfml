@@ -72,6 +72,14 @@ void App::run(MainMenu& mainMenu)
         }
 
         /**
+         * Игрок находится в меню настроек
+         **/
+        if(currentState == StateType::SETTINGS_MENU)
+        {
+            
+        }
+
+        /**
          * Игрок начал новую игру
          **/
         if(currentState == StateType::NEW_GAME)
