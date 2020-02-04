@@ -9,6 +9,7 @@
 #include "../tileMap/TileMap.hpp"
 #include "../camera/Camera.hpp"
 #include "../TileContainer.hpp"
+#include "../../fileSystem/Settings.hpp"
 
 /**
  * Базовый класс сцен
