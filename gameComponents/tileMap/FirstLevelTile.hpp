@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TileMap.hpp"
+#include "../../fileSystem/TileReader.hpp"
 
 /**
  * Тайловая карта для первого уровня
