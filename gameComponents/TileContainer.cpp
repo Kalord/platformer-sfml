@@ -5,10 +5,8 @@ TileContainer::TileContainer()
     const std::string pathToAsset = "assets/game/tile";
 
     std::map<char, std::string> tile = {
-        {'p', pathToAsset + "/platform.png"},
-        {'m', pathToAsset + "/mushroom.png"},
-        {'r', pathToAsset + "/rock.png"},
-        {'l', pathToAsset + "/rock_2.png"}
+        {'s', pathToAsset + "/stone.png"},
+        {'m', pathToAsset + "/m.png"}
     };
 
     for(auto const& [identityTile, path] : tile)
