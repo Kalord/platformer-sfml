@@ -1,6 +1,6 @@
 #include "Camera.hpp"
 
-Camera::Camera(int x, int y) : center({x, y})
+Camera::Camera(int x, int y) : center({x, y}), offset(center)
 {
 }
 
@@ -15,7 +15,7 @@ void Camera::update(
 {
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
-    const float tileOffset = 32.0f;
+    const float tileOffset = TileContainer::TILE_SIZE;
 
     for(i; i < this->center.y + this->offset.y; i++)
     {

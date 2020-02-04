@@ -25,7 +25,7 @@ private:
     /**
      * Сдвиг от центра камеры, зона видимости
      **/
-    const sf::Vector2i offset{5, 2};
+    sf::Vector2i offset;
 public:
     Camera(int x, int y);
     virtual ~Camera() {}
