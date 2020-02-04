@@ -31,6 +31,11 @@ public:
     virtual ~Camera() {}
 
     /**
+     * Перемещение центра камеры
+     **/
+    void moveCenter(int x, int y);
+
+    /**
      * Обновление viewport'а игры
      **/
     void update(

@@ -5,6 +5,15 @@ Camera::Camera(int x, int y) : center({x, y}), offset(center)
 }
 
 /**
+ * Перемещение центра камеры
+ **/
+void Camera::moveCenter(int x, int y)
+{
+    this->center.x += x;
+    this->center.y += y;
+}
+
+/**
  * Обновление viewport'а игры
  **/
 void Camera::update(
