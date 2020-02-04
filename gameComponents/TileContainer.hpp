@@ -8,6 +8,8 @@
 
 #include "IComponent.hpp"
 
+using Tiles = std::map<char, std::shared_ptr<sf::Sprite>>;
+
 class TileContainer : public IComponent
 {
 private:
@@ -18,7 +20,7 @@ private:
     /**
      * Спрайты тайлов
      **/
-    std::map<char, std::shared_ptr<sf::Sprite>> tileSprite;
+    Tiles tileSprite;
 public:
     TileContainer();
 
