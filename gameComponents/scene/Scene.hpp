@@ -34,5 +34,8 @@ protected:
     std::shared_ptr<TileContainer> tileContainer;
 public:
     virtual ~Scene() {}
+
+    std::shared_ptr<Camera>& getCamera();
+
     virtual void draw(sf::RenderWindow& window) = 0;
 };

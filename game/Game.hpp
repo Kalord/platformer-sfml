@@ -7,6 +7,7 @@
 #include "../gameComponents/scene/Scene.hpp"
 #include "state/State.hpp"
 #include "../gameComponents/scene/FirstLevel.hpp"
+#include "event/Event.hpp"
 
 /**
  * Данный класс отвечает за игровой процесс
@@ -20,6 +21,10 @@ private:
      * Объект игровой сцены
      **/
     std::shared_ptr<Scene> scene;
+    /**
+     * Система событий
+     */
+    Event event;
 public:
     Game();
 

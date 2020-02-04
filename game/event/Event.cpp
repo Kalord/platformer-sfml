@@ -4,6 +4,7 @@ Event::Event()
 {
     this->commonEvent = new Common();
     this->menuEvent = new Menu();
+    this->gameEvent = new GameEvent();
 }
 
 /**
@@ -21,4 +22,9 @@ Common* Event::common()
 Menu* Event::menu()
 {
     return this->menuEvent;
+}
+
+GameEvent* Event::game()
+{
+    return this->gameEvent;
 }

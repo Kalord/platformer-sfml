@@ -2,6 +2,7 @@
 
 #include "Common.hpp"
 #include "Menu.hpp"
+#include "GameEvent.hpp"
 
 /**
  * Фасад для событий игры
@@ -19,6 +20,10 @@ private:
      * События, для игрового меню
      **/
     Menu* menuEvent;
+    /**
+     * События, происходящие в игре
+     **/
+    GameEvent* gameEvent;
 public:
     Event();
     /**
@@ -30,4 +35,9 @@ public:
      * Получение событий игрового меню
      **/
     Menu* menu();
+
+    /**
+     * Получение событий игры
+     **/
+    GameEvent* game();
 };

@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game()
+Game::Game() : event(Event{})
 {
 }
 
@@ -15,9 +15,19 @@ void Game::gameLoop(sf::RenderWindow& window)
         {
             if(event.type == sf::Event::Closed)
             {
-                //@tmp
-                window.close();
-                //@tmp
+                this->event.common()->close(window);
+            }
+
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::D)
+                {
+                    this->event.game()->scrollSceneFront(this->scene->getCamera());
+                }
+                if(event.key.code == sf::Keyboard::A)
+                {
+                    this->event.game()->scrollSceneBack(this->scene->getCamera());
+                }
             }
         }
 
