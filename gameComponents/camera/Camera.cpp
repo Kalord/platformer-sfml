@@ -15,7 +15,7 @@ void Camera::update(
 {
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
-    const float tileOffset = 64.0f;
+    const float tileOffset = 32.0f;
 
     for(i; i < this->center.y + this->offset.y; i++)
     {
