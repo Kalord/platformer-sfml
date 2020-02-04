@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <map>
+#include <memory>
 #include <string>
 
 #include "IComponent.hpp"
@@ -13,11 +14,11 @@ private:
     /**
      * Текстуры тайлов
      **/
-    std::vector<sf::Texture> tileTexture;
+    std::vector<std::shared_ptr<sf::Texture>> tileTexture;
     /**
      * Спрайты тайлов
      **/
-    std::map<char, sf::Sprite> tileSprite;
+    std::map<char, std::shared_ptr<sf::Sprite>> tileSprite;
 public:
     TileContainer();
 

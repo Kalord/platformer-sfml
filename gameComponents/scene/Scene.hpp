@@ -33,5 +33,5 @@ protected:
     std::shared_ptr<TileContainer> tileContainer;
 public:
     virtual ~Scene() {}
-    virtual void draw(sf::RenderWindow& window);
+    virtual void draw(sf::RenderWindow& window) = 0;
 };
