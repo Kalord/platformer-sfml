@@ -5,6 +5,7 @@
 #include <string>
 #include <memory>
 
+#include "Base.hpp"
 #include "../fileSystem/Settings.hpp"
 #include "state/State.hpp"
 #include "../menu/MainMenu.hpp"
@@ -16,7 +17,7 @@
  * 
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
-class App
+class App : public Base
 {
 private:
     const std::string TITLE = "Game";
@@ -24,10 +25,6 @@ private:
      * Настройки игры
      **/
     Settings settings;
-    /**
-     * Система событий
-     */
-    Event event;
     /**
      * Объект игры
      **/

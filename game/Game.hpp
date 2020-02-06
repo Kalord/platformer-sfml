@@ -3,6 +3,8 @@
 #include <memory>
 
 #include <SFML/Graphics.hpp>
+
+#include "Base.hpp"
 #include "../fileSystem/GameProgress.hpp"
 #include "../gameComponents/scene/Scene.hpp"
 #include "state/State.hpp"
@@ -14,17 +16,13 @@
  * 
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
-class Game
+class Game : public Base
 {
 private:
     /**
      * Объект игровой сцены
      **/
     std::shared_ptr<Scene> scene;
-    /**
-     * Система событий
-     */
-    Event event;
 public:
     Game();
 

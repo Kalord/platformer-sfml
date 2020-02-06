@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() : event(Event{})
+Game::Game()
 {
 }
 
@@ -22,11 +22,11 @@ void Game::gameLoop(sf::RenderWindow& window)
             {
                 if(event.key.code == sf::Keyboard::D)
                 {
-                    this->event.game()->scrollSceneFront(this->scene->getCamera());
+                    this->event.game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
                 }
                 if(event.key.code == sf::Keyboard::A)
                 {
-                    this->event.game()->scrollSceneBack(this->scene->getCamera());
+                    this->event.game()->scrollSceneBack(this->scene->getCamera(), this->scene->getSizeTileMap());
                 }
             }
         }

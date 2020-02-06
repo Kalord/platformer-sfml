@@ -1,6 +1,6 @@
 #include "App.hpp"
 
-App::App(Settings settings) : settings(settings), event(Event{}), game(Game{})
+App::App(Settings settings) : settings(settings), game(Game{})
 {
     State::globalState()->setState(StateType::MAIN_MENU);
 }
