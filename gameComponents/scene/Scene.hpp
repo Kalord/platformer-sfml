@@ -10,6 +10,7 @@
 #include "../camera/Camera.hpp"
 #include "../TileContainer.hpp"
 #include "../../fileSystem/Settings.hpp"
+#include "../background/Background.hpp"
 
 /**
  * Базовый класс сцен
@@ -32,9 +33,14 @@ protected:
      * Контейнер с тайлами
      **/
     std::shared_ptr<TileContainer> tileContainer;
+    /**
+     * Фон
+     **/
+    std::shared_ptr<Background> background;
 public:
     virtual ~Scene() {}
 
+    sf::Vector2i getSizeTileMap();
     std::shared_ptr<Camera>& getCamera();
 
     virtual void draw(sf::RenderWindow& window) = 0;

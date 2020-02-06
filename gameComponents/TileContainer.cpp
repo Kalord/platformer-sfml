@@ -23,6 +23,11 @@ TileContainer::TileContainer()
     }
 }
 
+bool TileContainer::emptyTile(char tileIdentity)
+{
+    return tileIdentity == '0';
+}
+
 sf::Sprite& TileContainer::getTileByIdentity(char tileIdentity)
 {
     return *this->tileSprite[tileIdentity];

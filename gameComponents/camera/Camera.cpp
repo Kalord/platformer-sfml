@@ -7,10 +7,12 @@ Camera::Camera(int x, int y) : center({x, y}), offset(center)
 /**
  * Перемещение центра камеры
  **/
-void Camera::moveCenter(int x, int y)
+void Camera::moveCenter(int x, int y, sf::Vector2i border)
 {
-    this->center.x += x;
-    this->center.y += y;
+    if(x > 0 && this->center.x + this->offset.x < border.x) this->center.x += x;
+    if(y > 0 && this->center.y + this->offset.y < border.y) this->center.y += y;
+    if(x < 0 && this->center.x - this->offset.x > 0) this->center.x += x;
+    if(y < 0 && this->center.y - this->offset.y > 0) this->center.y += y;
 }
 
 /**
@@ -34,7 +36,7 @@ void Camera::update(
             char identityTile = tileMap->getTile(i, j);
 
             //@tmp
-            if(identityTile == '0')
+            if(tileContainer->emptyTile(identityTile))
             {
                 tilePosition.x += tileOffset;
                 continue;

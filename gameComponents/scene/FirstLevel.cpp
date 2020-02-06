@@ -8,9 +8,11 @@ FirstLevel::FirstLevel()
     this->camera = std::shared_ptr<Camera>(new Camera(centerX, centerY));
     this->tileMap = std::shared_ptr<TileMap>(new FirstLevelTile());
     this->tileContainer = std::shared_ptr<TileContainer>(new TileContainer());
+    this->background = std::shared_ptr<Default>(new Default());
 }
 
 void FirstLevel::draw(sf::RenderWindow& window)
 {
+    this->background->draw(window);
     this->camera->update(window, this->tileMap, this->tileContainer);
 }

@@ -26,5 +26,7 @@ public:
 
     TileContainer();
 
+    bool emptyTile(char tileIdentity);
+
     sf::Sprite& getTileByIdentity(char tileIdentity);
 };

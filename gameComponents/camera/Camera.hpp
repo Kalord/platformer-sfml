@@ -33,7 +33,7 @@ public:
     /**
      * Перемещение центра камеры
      **/
-    void moveCenter(int x, int y);
+    void moveCenter(int x, int y, sf::Vector2i border);
 
     /**
      * Обновление viewport'а игры

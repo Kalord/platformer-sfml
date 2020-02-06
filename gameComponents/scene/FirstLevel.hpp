@@ -2,6 +2,7 @@
 
 #include "Scene.hpp"
 #include "../tileMap/FirstLevelTile.hpp"
+#include "../background/Default.hpp"
 
 /**
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>

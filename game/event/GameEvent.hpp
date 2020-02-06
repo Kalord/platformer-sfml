@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include <memory>
 
 #include "../../gameComponents/camera/Camera.hpp"
@@ -10,6 +12,6 @@
 class GameEvent
 {
 public:
-    void scrollSceneFront(std::shared_ptr<Camera> camera);
-    void scrollSceneBack(std::shared_ptr<Camera> camera);
+    void scrollSceneFront(std::shared_ptr<Camera> camera, sf::Vector2i sizeTileMap);
+    void scrollSceneBack(std::shared_ptr<Camera> camera, sf::Vector2i sizeTileMap);
 };

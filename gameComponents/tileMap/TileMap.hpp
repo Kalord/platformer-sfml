@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include <vector>
 
 #include "../IComponent.hpp"
@@ -20,4 +22,5 @@ public:
     virtual ~TileMap() {}
 
     char getTile(int x, int y);
+    sf::Vector2i getSize();
 };
