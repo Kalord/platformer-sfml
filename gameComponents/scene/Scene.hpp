@@ -11,6 +11,7 @@
 #include "../TileContainer.hpp"
 #include "../../fileSystem/Settings.hpp"
 #include "../background/Background.hpp"
+#include "../character/Character.hpp"
 
 /**
  * Базовый класс сцен
@@ -37,6 +38,10 @@ protected:
      * Фон
      **/
     std::shared_ptr<Background> background;
+    /**
+     * Персонаж, которым управляет пользователь
+     **/
+    std::shared_ptr<Character> mainCharacter;
 public:
     virtual ~Scene() {}
 
