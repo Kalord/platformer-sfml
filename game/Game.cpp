@@ -1,9 +1,5 @@
 #include "Game.hpp"
 
-Game::Game()
-{
-}
-
 void Game::gameLoop(sf::RenderWindow& window)
 {
     while(window.isOpen())
@@ -15,18 +11,18 @@ void Game::gameLoop(sf::RenderWindow& window)
         {
             if(event.type == sf::Event::Closed)
             {
-                this->event.common()->close(window);
+                this->getEventSystem().common()->close(window);
             }
 
             if(event.type == sf::Event::KeyPressed)
             {
                 if(event.key.code == sf::Keyboard::D)
                 {
-                    this->event.game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
+                    this->getEventSystem().game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
                 }
                 if(event.key.code == sf::Keyboard::A)
                 {
-                    this->event.game()->scrollSceneBack(this->scene->getCamera(), this->scene->getSizeTileMap());
+                    this->getEventSystem().game()->scrollSceneBack(this->scene->getCamera(), this->scene->getSizeTileMap());
                 }
             }
         }

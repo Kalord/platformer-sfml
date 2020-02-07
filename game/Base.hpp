@@ -18,5 +18,5 @@ public:
     Base();
     virtual ~Base() {}
 
-    Event* getEventSystem();
+    Event getEventSystem();
 };

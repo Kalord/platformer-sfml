@@ -3,7 +3,7 @@
 Base::Base() : event(Event{})
 {}
 
-Event* Base::getEventSystem()
+Event Base::getEventSystem()
 {
-    return &this->event;
+    return this->event;
 }

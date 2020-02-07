@@ -33,24 +33,23 @@ void App::run(MainMenu& mainMenu)
         {
             if(event.type == sf::Event::Closed)
             {
-                this->event.common()->close(window);
+                this->getEventSystem().common()->close(window);
             }
-
             if(event.type == sf::Event::KeyPressed)
             {
                 if(currentState == StateType::MAIN_MENU)
                 {
                     if(event.key.code == sf::Keyboard::Up)
                     {
-                        this->event.menu()->moveActiveToTop(&mainMenu);
+                        this->getEventSystem().menu()->moveActiveToTop(&mainMenu);
                     }
                     if(event.key.code == sf::Keyboard::Down)
                     {
-                        this->event.menu()->moveActiveToBotton(&mainMenu);
+                        this->getEventSystem().menu()->moveActiveToBotton(&mainMenu);
                     }
                     if(event.key.code == sf::Keyboard::Enter)
                     {
-                        this->event.menu()->updateState(&mainMenu);
+                        this->getEventSystem().menu()->updateState(&mainMenu);
                     }
                 }
             }

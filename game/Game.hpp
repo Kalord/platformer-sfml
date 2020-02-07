@@ -24,8 +24,6 @@ private:
      **/
     std::shared_ptr<Scene> scene;
 public:
-    Game();
-
     /**
      * Игровой цикл
      **/
