@@ -7,6 +7,7 @@
 #include "../IComponent.hpp"
 #include "../tileMap/TileMap.hpp"
 #include "../TileContainer.hpp"
+#include "../character/Character.hpp"
 
 /**
  * Игровая камера
@@ -41,6 +42,7 @@ public:
     void update(
         sf::RenderWindow& window,
         std::shared_ptr<TileMap> tileMap,
-        std::shared_ptr<TileContainer> tileContainer
+        std::shared_ptr<TileContainer> tileContainer,
+        std::vector<std::shared_ptr<Character>> actors
     );
 };

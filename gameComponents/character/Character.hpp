@@ -8,6 +8,7 @@
 
 #include "../IComponent.hpp"
 #include "../animation/Animation.hpp"
+#include "../TileContainer.hpp"
 
 /**
  * Базовый класс для персонажа

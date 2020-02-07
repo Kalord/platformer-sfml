@@ -15,6 +15,10 @@ FirstLevel::FirstLevel()
 void FirstLevel::draw(sf::RenderWindow& window)
 {
     this->background->draw(window);
-    this->camera->update(window, this->tileMap, this->tileContainer);
-    this->mainCharacter->draw(window);
+    this->camera->update(
+        window, 
+        this->tileMap, 
+        this->tileContainer,
+        std::vector<std::shared_ptr<Character>>{mainCharacter}
+    );
 }

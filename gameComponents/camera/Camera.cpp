@@ -21,12 +21,18 @@ void Camera::moveCenter(int x, int y, sf::Vector2i border)
 void Camera::update(
     sf::RenderWindow& window,
     std::shared_ptr<TileMap> tileMap,
-    std::shared_ptr<TileContainer> tileContainer
+    std::shared_ptr<TileContainer> tileContainer,
+    std::vector<std::shared_ptr<Character>> actors
 )
 {
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
     const float tileOffset = TileContainer::TILE_SIZE;
+
+    for(const auto& actor: actors)
+    {
+        actor->draw(window);
+    }    
 
     for(i; i < this->center.y + this->offset.y; i++)
     {

@@ -8,8 +8,14 @@ Main::Main()
 
     this->life = 10;
     this->speedBase = 1;
-    this->position.x = 3;
-    this->position.y = 3;
+    this->position.x = 0;
+    this->position.y = 1;
+
+    this->sprite.setPosition(
+        this->position.x * TileContainer::TILE_SIZE,
+        this->position.y * TileContainer::TILE_SIZE 
+    );
+
     this->baseAnimation = std::shared_ptr<MainBaseAnimation>(
         new MainBaseAnimation()
     );
