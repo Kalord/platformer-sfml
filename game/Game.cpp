@@ -18,7 +18,8 @@ void Game::gameLoop(sf::RenderWindow& window)
             {
                 if(event.key.code == sf::Keyboard::D)
                 {
-                    this->getEventSystem().game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
+                    //this->getEventSystem().game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
+                    this->getEventSystem().game()->moveCharacterFront(this->scene->getMainCharacter());
                 }
                 if(event.key.code == sf::Keyboard::A)
                 {
