@@ -10,6 +10,8 @@ FirstLevel::FirstLevel()
     this->tileContainer = std::shared_ptr<TileContainer>(new TileContainer());
     this->background = std::shared_ptr<Default>(new Default());
     this->mainCharacter = std::shared_ptr<Character>(new Main());
+
+    this->camera->bindTargetObject(this->mainCharacter);
 }
 
 void FirstLevel::draw(sf::RenderWindow& window)

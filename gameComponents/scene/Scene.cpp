@@ -9,3 +9,8 @@ std::shared_ptr<Camera>& Scene::getCamera()
 {
     return this->camera;
 }
+
+std::shared_ptr<Character> Scene::getMainCharacter()
+{
+    return this->mainCharacter;
+}
