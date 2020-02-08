@@ -4,6 +4,8 @@
 
 #include <memory>
 
+#include <iostream>
+
 #include "../IComponent.hpp"
 #include "../tileMap/TileMap.hpp"
 #include "../TileContainer.hpp"
@@ -27,14 +29,28 @@ private:
      * Сдвиг от центра камеры, зона видимости
      **/
     sf::Vector2i offset;
+    /**
+     * Объект, к которому привязана камера
+     **/
+    std::shared_ptr<Character> targetObject;
 public:
     Camera(int x, int y);
     virtual ~Camera() {}
 
     /**
+     * Привязка объекта за которым должна следить камера
+     **/
+    void bindTargetObject(std::shared_ptr<Character> targetObject);
+
+    /**
      * Перемещение центра камеры
      **/
     void moveCenter(int x, int y, sf::Vector2i border);
+
+    /**
+     * Обновляет центр камера на основе привязанного объекта
+     **/
+    void updateCenter(sf::Vector2i border);
 
     /**
      * Отображение уровня

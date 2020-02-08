@@ -5,6 +5,14 @@ Camera::Camera(int x, int y) : center({x, y}), offset(center)
 }
 
 /**
+ * Привязка объекта за которым должна следить камера
+ **/
+void Camera::bindTargetObject(std::shared_ptr<Character> targetObject)
+{
+    this->targetObject = targetObject;
+}
+
+/**
  * Перемещение центра камеры
  **/
 void Camera::moveCenter(int x, int y, sf::Vector2i border)
@@ -16,6 +24,17 @@ void Camera::moveCenter(int x, int y, sf::Vector2i border)
 }
 
 /**
+ * Обновляет центр камера на основе привязанного объекта
+ **/
+void Camera::updateCenter(sf::Vector2i border)
+{
+    if(this->targetObject->getTilePosition().x > center.x)
+    {
+        this->moveCenter(2, 0, border);
+    }
+}
+
+/**
  * Отображение уровня
  **/
 void Camera::renderLevel(
@@ -24,6 +43,8 @@ void Camera::renderLevel(
     std::shared_ptr<TileContainer> tileContainer
 )
 {
+    this->updateCenter(tileMap->getSize());
+
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
     const float tileOffset = TileContainer::TILE_SIZE;
