@@ -37,6 +37,20 @@ public:
     void moveCenter(int x, int y, sf::Vector2i border);
 
     /**
+     * Отображение уровня
+     **/
+    void renderLevel(
+        sf::RenderWindow& window,
+        std::shared_ptr<TileMap> tileMap,
+        std::shared_ptr<TileContainer> tileContainer
+    );
+
+    /**
+     * Отображение игровых персонажей
+     **/
+    void renderActors(std::vector<std::shared_ptr<Character>> actors, sf::RenderWindow& window);
+
+    /**
      * Обновление viewport'а игры
      **/
     void update(
