@@ -9,3 +9,8 @@ void GameEvent::scrollSceneBack(std::shared_ptr<Camera> camera, sf::Vector2i siz
 {
     camera->moveCenter(-1, 0, sizeTileMap);
 }
+
+void GameEvent::moveCharacterFront(std::shared_ptr<Character> character)
+{
+    character->moveFront();
+}

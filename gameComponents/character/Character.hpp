@@ -49,7 +49,8 @@ public:
     virtual ~Character() {}
 
     u_int32_t getLife();
-    
+    sf::Vector2i getTilePosition();
+
     void baseState();
     void moveFront();
     void moveBack();

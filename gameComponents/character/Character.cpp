@@ -10,6 +10,11 @@ u_int32_t Character::getLife()
     return this->life;
 }
 
+sf::Vector2i Character::getTilePosition()
+{
+    return this->position;
+}
+
 void Character::baseState()
 {
     if(time(NULL) - this->timer >= this->speedBase)
@@ -23,6 +28,10 @@ void Character::moveFront()
 {
     this->position.x++;
 
+    this->sprite.setPosition(
+        this->position.x * TileContainer::TILE_SIZE,
+        this->position.y * TileContainer::TILE_SIZE 
+    );
 }
 
 void Character::moveBack()
