@@ -6,6 +6,7 @@
 #include "menu/MainMenu.hpp"
 #include "menu/Nav.hpp"
 #include "content/MainMenuContent.hpp"
+#include "game/state/State.hpp"
 
 int main()
 {
@@ -20,6 +21,8 @@ int main()
     MainMenu mainMenu("assets/img/menu/main-background.png", &nav);
 
     (App(settings)).run(mainMenu);
+
+    State::freeState();
 
     return 0;
 }
