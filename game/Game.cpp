@@ -34,6 +34,9 @@ void Game::gameLoop(sf::RenderWindow& window)
     }
 }
 
+/**
+ * Запуск новой игры
+ **/
 void Game::newGame(sf::RenderWindow& window)
 {
     this->scene = std::shared_ptr<Scene>(new FirstLevel());
