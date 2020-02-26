@@ -43,4 +43,8 @@ public:
      * Изменение состояния
      **/
     void setState(StateInt state);
+    /**
+     * Освобождение ресурса
+     **/
+    static void freeState();
 };

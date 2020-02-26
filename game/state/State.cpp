@@ -24,3 +24,11 @@ void State::setState(StateInt state)
 {
     this->currentState = state;
 }
+
+/**
+ * Освобождение ресурса
+ **/
+void State::freeState()
+{
+    if(state) delete state;
+}
