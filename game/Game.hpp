@@ -12,8 +12,13 @@
 #include "event/Event.hpp"
 
 /**
+ * DEBUG
+ */
+#include "../debug/Debug.hpp"
+
+/**
  * Данный класс отвечает за игровой процесс
- * 
+ *
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
 class Game : public Base

@@ -2,9 +2,12 @@
 
 void Game::gameLoop(sf::RenderWindow& window)
 {
+    Debug::consoleMessage("2)Start game loop");
+
     while(window.isOpen())
     {
         StateInt currentState = State::globalState()->getState();
+        bool updateCenter = false;
         sf::Event event;
 
         while (window.pollEvent(event))
@@ -18,8 +21,23 @@ void Game::gameLoop(sf::RenderWindow& window)
             {
                 if(event.key.code == sf::Keyboard::D)
                 {
-                    //this->getEventSystem().game()->scrollSceneFront(this->scene->getCamera(), this->scene->getSizeTileMap());
-                    this->getEventSystem().game()->moveCharacterFront(this->scene->getMainCharacter());
+                    Debug::consoleMessage("3)Press D:");
+
+                    if(this->scene->getCamera()->targetInCenter())
+                    {
+                        this->scene->getMainCharacter()->setInCenter(true);
+                    }
+
+                    if(!this->scene->getMainCharacter()->getInCenter())
+                    {
+                        Debug::consoleMessage("   - Target is not in center");
+                        Debug::consoleMessage("   - Move character front");
+                        this->getEventSystem().game()->moveCharacterFront(this->scene->getMainCharacter());
+                    }
+                    else
+                    {
+                        updateCenter = true;
+                    }
                 }
                 if(event.key.code == sf::Keyboard::A)
                 {
@@ -29,7 +47,7 @@ void Game::gameLoop(sf::RenderWindow& window)
         }
 
         window.clear();
-        this->scene->draw(window);
+        this->scene->draw(window, updateCenter);
         window.display();
     }
 }
@@ -39,6 +57,8 @@ void Game::gameLoop(sf::RenderWindow& window)
  **/
 void Game::newGame(sf::RenderWindow& window)
 {
+    Debug::consoleMessage("1)Start new game");
+
     this->scene = std::shared_ptr<Scene>(new FirstLevel());
     gameLoop(window);
 }
