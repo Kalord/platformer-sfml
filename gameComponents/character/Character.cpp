@@ -15,6 +15,16 @@ sf::Vector2i Character::getTilePosition()
     return this->position;
 }
 
+bool Character::getInCenter()
+{
+    return this->inCenter;
+}
+
+void Character::setInCenter(bool value)
+{
+    this->inCenter = value;
+}
+
 void Character::baseState()
 {
     if(time(NULL) - this->timer >= this->speedBase)
@@ -30,7 +40,7 @@ void Character::moveFront()
 
     this->sprite.setPosition(
         this->position.x * TileContainer::TILE_SIZE,
-        this->position.y * TileContainer::TILE_SIZE 
+        this->position.y * TileContainer::TILE_SIZE
     );
 }
 

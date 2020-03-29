@@ -12,7 +12,7 @@
 
 /**
  * Базовый класс для персонажа
- * 
+ *
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
 class Character : public IComponent
@@ -44,12 +44,20 @@ protected:
     std::shared_ptr<Animation> moveAnimation;
     std::shared_ptr<Animation> jumpAnimation;
     std::shared_ptr<Animation> attackAnimation;
+
+    /**
+     * Триггер, указывает, расположен ли персонаж в центре
+     */
+    bool inCenter = false;
 public:
     Character();
     virtual ~Character() {}
 
     u_int32_t getLife();
     sf::Vector2i getTilePosition();
+
+    bool getInCenter();
+    void setInCenter(bool value);
 
     void baseState();
     void moveFront();
