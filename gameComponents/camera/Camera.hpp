@@ -12,10 +12,15 @@
 #include "../character/Character.hpp"
 
 /**
+ * Debug
+ **/
+#include "../../debug/Debug.hpp"
+
+/**
  * Игровая камера
- * 
+ *
  * Данная камера являются viewport'ом для сцены
- * 
+ *
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
 class Camera : public IComponent
@@ -43,6 +48,11 @@ public:
     void bindTargetObject(std::shared_ptr<Character> targetObject);
 
     /**
+     * Проверяет, находится ли объект, за которым следит камера в центре
+     **/
+    bool targetInCenter();
+
+    /**
      * Перемещение центра камеры
      **/
     void moveCenter(int x, int y, sf::Vector2i border);
@@ -58,7 +68,8 @@ public:
     void renderLevel(
         sf::RenderWindow& window,
         std::shared_ptr<TileMap> tileMap,
-        std::shared_ptr<TileContainer> tileContainer
+        std::shared_ptr<TileContainer> tileContainer,
+        bool updateCenter
     );
 
     /**
@@ -73,6 +84,7 @@ public:
         sf::RenderWindow& window,
         std::shared_ptr<TileMap> tileMap,
         std::shared_ptr<TileContainer> tileContainer,
-        std::vector<std::shared_ptr<Character>> actors
+        std::vector<std::shared_ptr<Character>> actors,
+        bool updateCenter
     );
 };

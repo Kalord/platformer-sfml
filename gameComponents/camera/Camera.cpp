@@ -13,6 +13,14 @@ void Camera::bindTargetObject(std::shared_ptr<Character> targetObject)
 }
 
 /**
+ * Проверяет, находится ли объект, за которым следит камера в центре
+ **/
+bool Camera::targetInCenter()
+{
+    return this->targetObject->getTilePosition().x >= this->center.x + 1;
+}
+
+/**
  * Перемещение центра камеры
  **/
 void Camera::moveCenter(int x, int y, sf::Vector2i border)
@@ -28,9 +36,9 @@ void Camera::moveCenter(int x, int y, sf::Vector2i border)
  **/
 void Camera::updateCenter(sf::Vector2i border)
 {
-    if(this->targetObject->getTilePosition().x > center.x)
+    if(this->targetObject->getInCenter())
     {
-        this->moveCenter(2, 0, border);
+        this->moveCenter(1, 0, border);
     }
 }
 
@@ -40,15 +48,16 @@ void Camera::updateCenter(sf::Vector2i border)
 void Camera::renderLevel(
     sf::RenderWindow& window,
     std::shared_ptr<TileMap> tileMap,
-    std::shared_ptr<TileContainer> tileContainer
+    std::shared_ptr<TileContainer> tileContainer,
+    bool updateCenter
 )
 {
-    this->updateCenter(tileMap->getSize());
+    if(updateCenter) this->updateCenter(tileMap->getSize());
 
     int i = this->center.y - this->offset.y;
     sf::Vector2f tilePosition(0.0f, 0.0f);
     const float tileOffset = TileContainer::TILE_SIZE;
-  
+
     for(i; i < this->center.y + this->offset.y; i++)
     {
         int j = this->center.x - this->offset.x;
@@ -82,7 +91,7 @@ void Camera::renderActors(std::vector<std::shared_ptr<Character>> actors, sf::Re
     for(const auto& actor: actors)
     {
         actor->draw(window);
-    } 
+    }
 }
 
 /**
@@ -92,9 +101,10 @@ void Camera::update(
     sf::RenderWindow& window,
     std::shared_ptr<TileMap> tileMap,
     std::shared_ptr<TileContainer> tileContainer,
-    std::vector<std::shared_ptr<Character>> actors
+    std::vector<std::shared_ptr<Character>> actors,
+    bool updateCenter
 )
 {
-    this->renderLevel(window, tileMap, tileContainer);
+    this->renderLevel(window, tileMap, tileContainer, updateCenter);
     this->renderActors(actors, window);
 }
