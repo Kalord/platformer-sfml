@@ -12,5 +12,5 @@ class FirstLevel : public Scene
 {
 public:
     FirstLevel();
-    void draw(sf::RenderWindow& window) override;
+    void draw(sf::RenderWindow& window, bool updateCenter = false) override;
 };

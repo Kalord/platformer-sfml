@@ -16,7 +16,7 @@
 /**
  * Базовый класс сцен
  * Композиция из игровых компонентов
- * 
+ *
  * @author Artem Tyutnev <artem.tyutnev.developer@gmail.com>
  **/
 class Scene : public IComponent
@@ -49,5 +49,5 @@ public:
     std::shared_ptr<Camera>& getCamera();
     std::shared_ptr<Character> getMainCharacter();
 
-    virtual void draw(sf::RenderWindow& window) = 0;
+    virtual void draw(sf::RenderWindow& window, bool updateCenter = false) = 0;
 };
