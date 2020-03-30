@@ -60,6 +60,15 @@ void Game::newGame(sf::RenderWindow& window)
     Debug::consoleMessage("1)Start new game");
 
     this->scene = std::shared_ptr<Scene>(new FirstLevel());
+
+    //@tmp
+    std::shared_ptr<CollisionComponent> collisionComponent(new CollisionComponent());
+    collisionComponent->setTarget((ICollisionTarget*)this->scene->getMainCharacter().get());
+    collisionComponent->setTileMap(this->scene->getTileMap().get());
+    collisionComponent->setBottomCollisionTiles(std::vector<char>({'0'}));
+    this->scene->getMainCharacter()->bindCollisionComponent(collisionComponent);
+    //@endtmp
+
     gameLoop(window);
 }
 

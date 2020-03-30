@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 #include <SFML/Graphics.hpp>
 
@@ -10,6 +11,10 @@
 #include "state/State.hpp"
 #include "../gameComponents/scene/FirstLevel.hpp"
 #include "event/Event.hpp"
+
+
+#include "../gameComponents/collision/ICollisionTarget.hpp"
+#include "../gameComponents/collision/CollisionComponent.hpp"
 
 /**
  * DEBUG
