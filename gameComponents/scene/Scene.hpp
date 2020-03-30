@@ -48,6 +48,7 @@ public:
     sf::Vector2i getSizeTileMap();
     std::shared_ptr<Camera>& getCamera();
     std::shared_ptr<Character> getMainCharacter();
+    std::shared_ptr<TileMap> getTileMap();
 
     virtual void draw(sf::RenderWindow& window, bool updateCenter = false) = 0;
 };

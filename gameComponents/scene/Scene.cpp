@@ -14,3 +14,8 @@ std::shared_ptr<Character> Scene::getMainCharacter()
 {
     return this->mainCharacter;
 }
+
+std::shared_ptr<TileMap> Scene::getTileMap()
+{
+    return this->tileMap;
+}
