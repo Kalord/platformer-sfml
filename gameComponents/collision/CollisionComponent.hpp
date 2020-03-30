@@ -7,6 +7,8 @@
 #include "../tileMap/TileMap.hpp"
 #include "ICollisionTarget.hpp"
 
+#include <iostream>
+
 /**
  * Класс для работы со столкновениями
  *

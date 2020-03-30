@@ -86,7 +86,7 @@ bool CollisionComponent::detectedBottom()
     sf::Vector2i currentPosition = this->target->getTilePosition();
     char tile = this->tileMap->getTile(currentPosition.x, currentPosition.y);
 
-    return this->detected(this->backTiles, tile);
+    return this->detected(this->bottomTiles, tile);
 }
 
 /**
@@ -97,5 +97,5 @@ bool CollisionComponent::detectedTop()
     sf::Vector2i currentPosition = this->target->getTilePosition();
     char tile = this->tileMap->getTile(currentPosition.x, currentPosition.y - 1);
 
-    return this->detected(this->backTiles, tile);
+    return this->detected(this->topTiles, tile);
 }

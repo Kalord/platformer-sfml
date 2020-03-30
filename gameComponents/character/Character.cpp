@@ -46,7 +46,7 @@ bool Character::canMove()
 
 void Character::beforeMove()
 {
-    while(!this->collision->detectedBottom()) this->down();
+    while(this->collision->detectedBottom()) this->down();
 }
 
 void Character::moveFront()
